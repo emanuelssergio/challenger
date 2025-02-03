@@ -109,9 +109,9 @@ button {
     padding: 15px 30px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
-    border: 2px solid #fd0101;
+    border: 2px solid #000000;
     border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
@@ -159,4 +159,19 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.remove-button {
+    margin-left: 10px;
+    padding: 1px 5px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50%;  /* Torna o botão redondo */
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.remove-button:hover {
+    background-color: #000000;
 }

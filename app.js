@@ -14,7 +14,10 @@ function adicionarAmigo (){
     document.getElementById('listaAmigos');
     if(Nome==''){   
         alert('coloque um nome valido');
-    }else{
+    } else if (ListaAmigos.includes(Nome)) {
+        alert('Este nome já está na lista');
+    } 
+    else{
         GuardaNome(ListaAmigos,Nome, valido);
         console.log(ListaAmigos);
         atualizarListaAmigos();
@@ -38,18 +41,30 @@ function sortearAmigo(lista){
 }
 }
 
-function atualizarListaAmigos(){
-    Lista.innerHTML = "";
-    let indice=0;
-    resultado.innerHTML="";
-    while (indice<ListaAmigos.length){
-        const li= document.createElement("li");
-        li.textContent=ListaAmigos[indice];
+function atualizarListaAmigos() {
+    Lista.innerHTML = ""; // Limpa a lista exibida
+    resultado.innerHTML = ""; // Limpa o resultado do sorteio
+
+    ListaAmigos.forEach((nome, indice) => {
+        const li = document.createElement("li");
+        li.textContent = nome;
+
+        // Cria botão de remover
+        const botaoRemover = document.createElement("button");
+        botaoRemover.textContent = "x";
+        botaoRemover.classList.add("remove-button");
+        botaoRemover.onclick = () => removerAmigo(indice);
+
+        // Adiciona o botão ao item da lista
+        li.appendChild(botaoRemover);
         Lista.appendChild(li);
-        indice++;
-    }
-
-
+    });
 }
+
+function removerAmigo(indice) {
+    ListaAmigos.splice(indice, 1); // Remove o nome pelo índice
+    atualizarListaAmigos(); // Atualiza a lista exibida
+}
+
 
 
