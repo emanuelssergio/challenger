@@ -51,3 +51,6 @@ HTML: É necessário um arquivo HTML com:
     Um campo de entrada (input) para os nomes.
     Um elemento com id="resultado" para exibir o amigo sorteado.
     Um elemento com id="listaAmigos" para exibir a lista de amigos.
+
+
+    link vercel : https://challenger-omega.vercel.app/
